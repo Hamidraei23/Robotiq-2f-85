@@ -54,6 +54,12 @@ include_directories(
 #   src/${PROJECT_NAME}/robotiq_2f_gripper_control.cpp
 # )
 
+## sinwave streamer (Option A: non-blocking goal streaming)
+include_directories(include)
+add_executable(sinwave_gripper src/sinwave_gripper.cpp)
+target_link_libraries(sinwave_gripper ${catkin_LIBRARIES})
+add_dependencies(sinwave_gripper ${catkin_EXPORTED_TARGETS})
+
 
 #############
 ## Install ##
@@ -62,6 +68,8 @@ include_directories(
 catkin_install_python(PROGRAMS 
       scripts/robotiq_2f_action_server.py
       scripts/robotiq_2f_action_client_example.py
+      scripts/gripper_pulse.py
+      scripts/2f_sinwave.py
                       DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Mark executables and/or libraries for installation
