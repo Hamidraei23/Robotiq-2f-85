@@ -1,0 +1,21 @@
+<launch>
+  <node name="robotiq_2f85" pkg="robotiq_2f85_driver" type="robotiq_2f85_node"
+        output="screen" required="true">
+
+    <!-- Serial port the USB cable appears as on your machine.
+         Run: ls /dev/ttyUSB* or ls /dev/serial/by-id/  to find it. -->
+    <param name="port"          value="/dev/ttyUSB0" />
+
+    <!-- Must match the gripper's DIP-switch setting (factory default: 115200) -->
+    <param name="baudrate"      value="115200" />
+
+    <!-- Modbus RTU slave address (factory default: 9 = 0x09) -->
+    <param name="slave_id"      value="9" />
+
+    <!-- How often to read and publish gripper status (Hz) -->
+    <param name="status_rate"   value="200.0" />
+
+    <!-- Set to false if you want to activate manually via the ~/activate service -->
+    <param name="auto_activate" value="true" />
+  </node>
+</launch>

@@ -1,0 +1,9 @@
+# Move the gripper to a target position.
+# The Modbus write completes in ~2-5 ms; the gripper then moves independently.
+
+float64 position  # target gap in metres [0.0 = closed, 0.085 = fully open]
+float64 velocity  # m/s  [0.013, 0.1]   — clamped if out of range
+float64 force     # N    [30.0, 100.0]  — clamped if out of range
+---
+bool   success
+string message
