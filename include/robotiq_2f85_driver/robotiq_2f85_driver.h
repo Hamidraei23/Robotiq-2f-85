@@ -105,7 +105,7 @@ public:
    *                 0.0   = fully closed
    *                 0.087 = fully open
    * @param vel_ms   Speed in m/s.  Clamped to [0.013, 0.1].
-   * @param force_n  Maximum force in N.  Clamped to [30, 100].
+   * @param force_n  Maximum force in N.  Clamped to [10, 100].
    * @return true if the Modbus write succeeded.
    */
   bool move(double pos_m, double vel_ms = 0.05, double force_n = 50.0);
@@ -157,7 +157,7 @@ private:
   /** m/s   → rSP byte.  Range [0.013, 0.1] m/s → [0, 255]. */
   static uint8_t velToReg(double vel_ms);
 
-  /** N     → rFR byte.  Range [30, 100] N → [0, 255]. */
+  /** N     → rFR byte.  Range [10, 100] N → [0, 255]. */
   static uint8_t forceToReg(double force_n);
 
   // ── Members ───────────────────────────────────────────────────────────────

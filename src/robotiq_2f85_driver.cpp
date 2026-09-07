@@ -26,7 +26,7 @@ static constexpr double MAX_POS_M   = 0.087;  // metres, physical stroke
 // ── Velocity / force calibration ─────────────────────────────────────────────
 static constexpr double VEL_MIN_MS  = 0.013;
 static constexpr double VEL_MAX_MS  = 0.1;
-static constexpr double FORCE_MIN_N = 30.0;
+static constexpr double FORCE_MIN_N = 10.0;
 static constexpr double FORCE_MAX_N = 100.0;
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -32,15 +32,15 @@ using TP    = Clock::time_point;
 // ── Pulse parameters (runtime-mutable) ──────────────────────────────────────
 struct PulseParams
 {
-    double open_pos  = 0.0222; // m   [0.0, 0.085]
-    double close_pos = 0.021;  // m   [0.0, 0.085]
-    double speed     = 0.1;    // m/s [0.013, 0.1]  — clamped by driver
-    double force     = 30.0;   // N   [30, 100]      — clamped by driver
-    int    pulse_ms  = 50;     // ms  hold at open position before closing
+    double open_pos  = 0.0385; // m   [0.0, 0.085]
+    double close_pos = 0.0355;  // m   [0.0, 0.085]
+    double speed     = 0.25;    // m/s [0.013, 0.1]  — clamped by driver
+    double force     = 10.0;   // N   [10, 100]      — clamped by driver
+    int    pulse_ms  = 10.0;     // ms  hold at open position before closing
 };
 
 static constexpr int POLL_HZ          = 1000;
-static constexpr int PHASE_TIMEOUT_MS = 500;
+static constexpr int PHASE_TIMEOUT_MS = 1;
 
 // ── State machine ─────────────────────────────────────────────────────────────
 enum class Phase { IDLE, OPEN_WAIT, HOLD, CLOSE_WAIT };
